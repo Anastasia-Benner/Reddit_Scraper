@@ -1,0 +1,10 @@
+{
+  "target_subs":[],
+  "after":{"day":12, "month":7 ,"year":2020},
+  "before":{"day":18, "month":7 ,"year":2020},
+  "convert_timestamp": true,
+  "keywords":null,
+  "comments_filename": "comments.csv",
+  "posts_filename": "posts.csv",
+  "save_mode":"w"
+}

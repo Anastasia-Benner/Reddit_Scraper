@@ -1,0 +1,2 @@
+This is a git work around so that the output folder exists in the repo
+I guess the folder can't be empty
