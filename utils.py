@@ -37,6 +37,8 @@ def submissionIDList(sub=None, q=None, before=None, after=None):
     r = requests.get(base_url, params=payload)
     data = json.loads(r.text)
 
+    print(f"{len(data['data'])} posts found.")
+
     return [post['id'] for post in data['data']]
 
 

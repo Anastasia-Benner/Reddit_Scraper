@@ -1,4 +1,4 @@
-import praw, utils
+import praw, utils, time
 import pandas as pd
 
 def main():
@@ -10,12 +10,15 @@ def main():
     print('Gathering post id\'s....')
     post_list = []
     for sub in parameters['target_subs']:
-
+        print(f'Scraping Sub :{sub}')
         if parameters['keywords'] == None:
+            print('No Keywords in Parameters')
             post_list += utils.submissionIDList(sub=sub, before=parameters['before'], after=parameters['after'])
         else:
             for keyword in parameters['keywords']:
+                print(f"Query term: {keyword}")
                 post_list += utils.submissionIDList(sub=sub, q=keyword, before=parameters['before'], after=parameters['after'])
+                time.sleep(1)
     print('Done')
     ## 2.5 remove duplicate id's
     post_list = utils.removeDupes(post_list)
